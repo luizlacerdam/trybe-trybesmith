@@ -7,7 +7,9 @@ const createProduct = async (req: Request, res: Response) => {
   return res.status(status).json(data);
 };
 
-const getAllProducts = async () => {};
+const getAllProducts = async () => {
+    
+};
 
 export {
   createProduct,
