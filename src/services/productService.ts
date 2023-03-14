@@ -7,7 +7,8 @@ const createProduct = async (newProduct: ProductToAdd) => {
 };
 
 const getAllProducts = async () => {
-    
+  const data = await productModel.getAllProducts();
+  return { status: 200, data };
 };
 
 export {
