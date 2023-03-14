@@ -7,8 +7,9 @@ const createProduct = async (req: Request, res: Response) => {
   return res.status(status).json(data);
 };
 
-const getAllProducts = async () => {
-    
+const getAllProducts = async (req: Request, res: Response) => {
+  const { status, data } = await productService.getAllProducts();
+  return res.status(status).json(data);
 };
 
 export {
