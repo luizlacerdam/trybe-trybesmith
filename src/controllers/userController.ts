@@ -7,9 +7,13 @@ const createUser = async (req: Request, res: Response): Promise<Response> => {
   return res.status(status).json(data);
 };
 
-const getAllUsers = async () => {};
+const userLogin = async (req: Request, res: Response) => {
+  const loginObg = req.body;
+  const { status, data } = await userService.userLogin(loginObg);
+  return res.status(status).json(data);
+};
 
 export {
   createUser,
-  getAllUsers,
+  userLogin,
 };

@@ -7,6 +7,6 @@ const app = express();
 
 app.use(express.json());
 app.use('/products', productRoute);
-app.use('/users', userRoute);
+app.use(userRoute);
 app.use('/orders', orderRoute);
 export default app;

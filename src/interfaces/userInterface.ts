@@ -1,7 +1,5 @@
-export interface Username {
+export interface LoginUser {
   username: string;
-}
-export interface LoginUser extends Username {
   password?: string;
 } 
 
