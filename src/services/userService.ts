@@ -13,8 +13,9 @@ const createUser = async (newUser: NewUser) => {
 };
 
 const userLogin = async (loginObj: LoginUser) => {
-  const { username } = loginObj;
-  const [user]: any = await userModel.getUserByUsername(username);
+  const [user] = await userModel.getUserByUsername(loginObj);
+
+  if (!user) return { status: 401, data: { message: 'Username or password invalid' } };
   
   delete user.password;
   const token = tokenGen({ ...user });
