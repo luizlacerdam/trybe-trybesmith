@@ -9,7 +9,7 @@ const createUser = async (newUser: NewUser) => {
     [username, vocation, level, password],
   );
   const { insertId: id } = result;
-  return { id, ...result };
+  return { id, ...newUser };
 };
 
 const getAllUsers = async () => {
