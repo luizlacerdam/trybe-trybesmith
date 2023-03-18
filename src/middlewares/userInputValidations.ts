@@ -13,7 +13,6 @@ const userInputValidations = (req: Request, res: Response, next: NextFunction) =
 
 const levelInputValidation = (req: Request, res: Response, next: NextFunction) => {
   const { level } = req.body;
-  console.log(level);
   
   if (level === 0) {
     return res.status(422).json(
