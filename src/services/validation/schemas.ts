@@ -5,11 +5,14 @@ const productSchema = Joi.object({
   amount: Joi.string().min(3).required(),
 });
 
-const outro = {
-
-};
+const userSchema = Joi.object({
+  username: Joi.string().min(3).required(),
+  password: Joi.string().min(8).required(),
+  level: Joi.number().greater(1).positive().required(),
+  vocation: Joi.string().min(3).required(),
+});
 
 export {
   productSchema,
-  outro,
+  userSchema,
 };

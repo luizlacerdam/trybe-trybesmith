@@ -1,8 +1,12 @@
 import { IUser, LoginUser, NewUser } from '../interfaces/userInterface';
 import * as userModel from '../models/userModel';
 import tokenGen from '../utils/tokenGen';
+import * as schema from './validation/userValidation';
 
 const createUser = async (newUser: NewUser) => {
+  const error = schema.userValidation(newUser);
+  if (error.status) return error;
+
   const user:IUser = await userModel.createUser(newUser);
 
   delete user.password;
