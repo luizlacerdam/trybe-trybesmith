@@ -1,5 +1,7 @@
-export default interface IOrder {
-  id: number;
+export interface COrder {
+  productsIds: number[];
+}
+export interface IOrder extends COrder {
+  id?: number;
   userId: number;
-  productsIds: [number];
 }
